@@ -10,15 +10,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+// implements onclick
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    //khai bao mot doi tuong handler
+    //khai bao doi tuong handler
     private Handler handler;
     private TextView txtNumber;
     private Button btnStart;
+    // tạo hằng số
     private static final int UP_NUMBER = 100;
     private static final int NUMBER_DONE =101;
     private boolean isUpdate;
 
+    //default
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,11 +33,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void getViews(){
         txtNumber = findViewById(R.id.txtNumber);
         btnStart = findViewById(R.id.btnStart);
+        //OnClickListener
         btnStart.setOnClickListener(this);
     }
 
     private void processHandler(){
         //khoi tao doi tuong handler
+        //getMainLooper phương thức lặp lại
         handler = new Handler(getMainLooper()){
             @Override
             public void handleMessage(@NonNull Message msg) {
@@ -57,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
     }
+    //OnClickListener
     @Override
     public void onClick(View view) {
         //thuc thi cong viec khi click vao doi tuong button

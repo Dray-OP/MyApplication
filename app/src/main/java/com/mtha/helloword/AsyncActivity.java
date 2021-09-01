@@ -50,7 +50,7 @@ public class AsyncActivity extends AppCompatActivity implements View.OnClickList
             for(int i=0;i<=100;i++){
                 publishProgress(i);
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(50);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
